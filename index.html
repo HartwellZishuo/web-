@@ -13,7 +13,7 @@
 </html>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<!-- <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
@@ -91,8 +91,8 @@
                 oLi.innerHTML = res + '<span class="update">修改</span><span class="delete">删除</span>';
                 oUl.appendChild(oLi);
             }
-        };
-        //修改
+        }; -->
+        <!-- //修改
         /* for(var i = 0; i < upds.length; i++){
          upds[i].onclick = function () {
          var res = prompt('请输入修改的内容');
@@ -129,21 +129,21 @@
                     oUl.removeChild(tar.parentNode);
                 }
             }
-        }
+        } -->
     </script>
     
     <div style="border: 2px dashed #ccc;width:320px;text-align:center;">
-        <label for="sitename">网站名(key)：</label>
+        <label for="sitename">搜索关键词：</label>
         <input type="text" id="sitename" name="sitename" class="text"/>
         <br/>
-        <label for="siteurl">网 址(value)：</label>
+        <label for="siteurl">关键词详情：</label>
         <input type="text" id="siteurl" name="siteurl"/>
         <br/>
         <input type="button" onclick="save()" value="新增记录"/>
         <hr/>
-        <label for="search_site">输入网站名：</label>
+        <label for="search_site">输入关键词：</label>
         <input type="text" id="search_site" name="search_site"/>
-        <input type="button" onclick="findOne()" value="查找网站"/>
+        <input type="button" onclick="findOne()" value="查找关键词"/>
         <p id="find_result"><br/></p>
     </div>
     <div id="list">
@@ -155,7 +155,7 @@
         var sitename = document.getElementById("sitename").value;
         var siteurl= document.getElementById("siteurl").value;
         localStorage.setItem(sitename,siteurl);
-        alert("save Success!")
+        alert("保存数据成功!")
         loadAll();
         }
         //查询数据    
@@ -163,7 +163,7 @@
         var search_site = document.getElementById("search_site").value;
         var siteurl = localStorage.getItem(search_site);
         var find_result= document.getElementById("find_result");
-        find_result.innerHTML= search_site + "的网址是：" + siteurl;
+        find_result.innerHTML= search_site + "的详情是：" + siteurl;
         }
         //全查询
         //将所有存储在localStorage中的对象提取出来，并展现到界面上
